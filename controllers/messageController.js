@@ -1,4 +1,6 @@
-import Message from "./messageModel.js";
+import Message from "../models/messageModel.js";
+import sendEmail from "../utils/sendEmail.js";
+
 
 export const sendMessage = async (req, res) => {
     try {
@@ -17,7 +19,7 @@ export const sendMessage = async (req, res) => {
             userEmail,
             message,
         });
-
+        sendEmail(userName, userEmail, message);
         return res.status(201).json({
             message: "Message sent successfully",
             data: newMessage,

@@ -2,7 +2,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import messageRouter from './messageRouter.js';
+import messageRouter from './routes/messageRouter.js';
+import authRouter from './routes/authRouter.js';
 
 dotenv.config();
 
@@ -38,6 +39,7 @@ app.get("/", (req, res) => {
 
 // routes
 app.use('/api/messages',messageRouter)
+app.use('/api/auth',authRouter)
 
 // MongoDB connection
 const uri = process.env.MONGO_URI;
