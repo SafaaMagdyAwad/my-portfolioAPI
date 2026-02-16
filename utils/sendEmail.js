@@ -15,7 +15,7 @@ const sendEmail = async (userName, userEmail, message) => {
         // Send the email
         const mailOptions = {
             from: userEmail, // sender address
-            to: 'safaa.magdy.awad.mohammad@gmail.com', // recipient address
+            to: 'safaa.magdy.awad.mohammed@gmail.com', // recipient address
             subject: 'New Message Received',
             text: `You have received a new message from ${userName} (${userEmail}):\n\n${message}`,
             // You can also use html: '<b>HTML version</b>' if you prefer HTML email
